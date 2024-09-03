@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sempre Doce - Confeitaria</title>
+    <style>
+        /* Reset básico */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Importando fonte do Google Fonts */
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+        /* Estilos gerais */
+        body {
+            font-family: 'Roboto', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #fce4ec;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: auto;
+            overflow: hidden;
+        }
+
+        /* Cabeçalho */
+        header {
+            background: #ec407a;
+            color: #fff;
+            padding: 20px 0;
+            border-bottom: 1px solid #ddd;
+            position: relative;
+        }
+
+        header h1 {
+            float: left;
+            margin-left: 20px;
+            font-size: 2.5em;
+        }
+
+        nav {
+            float: right;
+            margin-right: 20px;
+        }
+
+        nav ul {
+            list-style: none;
+        }
+
+        nav ul li {
+            display: inline;
+            margin-left: 20px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #fff;
+            font-weight: bold;
+        }
+
+        .menu-toggle {
+            display: none;
+            font-size: 24px;
+            cursor: pointer;
+            color: #fff;
+            margin-right: 20px;
+        }
+
+        /* Seções */
+        .hero {
+            background: url('https://lirp.cdn-website.com/33406c6e/dms3rep/multi/opt/310210-7-itens-de-confeitaria-indispensaveis-para-a-sua-producao-1920w.jpg') no-repeat center center/cover;
+            color: #fff;
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        .hero-content h2 {
+            font-size: 3em;
+            margin-bottom: 20px;
+        }
+
+        .hero-content p {
+            font-size: 1.2em;
+            margin-bottom: 30px;
+        }
+
+        .btn {
+            display: inline-block;
+            background: #fff;
+            color: #ec407a;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: bold;
+        }
+
+        .cardapio {
+            padding: 40px 0;
+            background: #fff;
+        }
+
+        .cardapio h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #ec407a;
+        }
+
+        .cardapio-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .card {
+            flex: 1 1 calc(33% - 40px);
+            background: #fff;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            overflow: hidden;
+            text-align: center;
+            padding: 15px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            transition: transform 0.3s;
+        }
+
+        .card:hover {
+            transform: scale(1.05);
+        }
+
+        .card img {
+            max-width: 100%;
+            height: auto;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .card h3 {
+            margin: 10px 0;
+            color: #ec407a;
+        }
+
+        .card p {
+            color: #666;
+        }
+
+        /* Sobre */
+        .sobre {
+            padding: 40px 0;
+            background: #fff;
+            text-align: center;
+        }
+
+        .sobre img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 5px;
+            margin-top: 20px;
+        }
+
+        /* Contato */
+        .contato {
+            padding: 40px 0;
+            background: #ec407a;
+            color: #fff;
+        }
+
+        .contato form {
+            max-width: 600px;
+            margin: auto;
+        }
+
+        .contato input, .contato textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: none;
+            border-radius: 5px;
+        }
+
+        .contato button {
+            background: #fff;
+            color: #ec407a;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        /* Rodapé */
+        footer {
+            background: #333;
+            color: #fff;
+            padding: 10px 0;
+            text-align: center;
+        }
+
+        /* Responsividade */
+        @media (max-width: 768px) {
+            nav {
+                float: none;
+                clear: both;
+            }
+
+            nav ul {
+                display: none;
+                text-align: center;
+            }
+
+            nav ul li {
+                display: block;
+                margin: 10px 0;
+            }
+
+            .menu-toggle {
+                display: block;
+            }
+        }
+
+        @media (max-width: 500px) {
+            header h1 {
+                font-size: 24px;
+            }
+
+            nav ul li a {
+                font-size: 14px;
+            }
+
+            .card {
+                flex: 1 1 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Sempre Doce</h1>
+            <nav>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#cardapio">Cardápio</a></li>
+                    <li><a href="#sobre">Sobre</a></li>
+                    <li><a href="#contato">Contato</a></li>
+                </ul>
+            </nav>
+            <div class="menu-toggle" id="menu-toggle">
+                <span>&#9776;</span>
+            </div>
+        </div>
+    </header>
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h2>Bem-vindo à Sempre Doce!</h2>
+            <p>Delicie-se com nossos bolos e sobremesas incríveis.</p>
+            <a href="#cardapio" class="btn">Veja nosso Cardápio</a>
+        </div>
+    </section>
+    <section id="cardapio" class="cardapio">
+        <div class="container">
+            <h2>Cardápio</h2>
+            <div class="cardapio-grid">
+                <div class="card">
+                    <img src="https://www.receiteria.com.br/wp-content/uploads/bolo-de-chocolate-rapido-e-molhadinho-capa.png" alt="Bolo de Chocolate">
+                    <h3>Bolo de Chocolate</h3>
+                    <p>Delicioso bolo de chocolate com cobertura cremosa.</p>
+                </div>
+                <div class="card">
+                    <img src="https://revistaespresso.com.br/wordpress/wp-content/uploads/2021/05/torta-de-frutas-frescas.png" alt="Torta de Frutas">
+                    <h3>Torta de Frutas</h3>
+                    <p>Torta fresca e saborosa com frutas da estação.</p>
+                </div>
+                <div class="card">
+                    <img src="https://guiadacozinha.com.br/wp-content/uploads/2023/04/receitas-de-cupcake-350x230.jpg" alt="Cupcakes">
+                    <h3>Cupcakes</h3>
+                    <p>Mini bolos com sabores variados e decoração divertida.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section id="sobre" class="sobre">
+        <div class="container">
+            <h2>Sobre Nós</h2>
+            <p>Na Sempre Doce, nossa paixão é criar doces deliciosos e feitos com amor. Com uma variedade de bolos, tortas e cupcakes, oferecemos o melhor para tornar seus momentos mais doces e especiais.</p>
+            <img src="https://portalagita.com.br/wp-content/uploads/2020/03/Morador-de-Igarap%C3%A9-participa-da-6%C2%AA-temporada-do-programa-%E2%80%9CQue-Seja-Doce%E2%80%9D-no-canal-GNT.jpeg" alt="Nossa Equipe">
+        </div>
+    </section>
+    <section id="confeitaria" class="contato">
+        <div class="container">
+            <h2>Contato</h2>
+            <p>Entre em contato conosco para mais informações ou para fazer uma encomenda.</p>
+            <form>
+                <input type="text" placeholder="Seu Nome" required>
+                <input type="email" placeholder="Seu Email" required>
+                <textarea placeholder="Sua Mensagem" required></textarea>
+                <button type="submit">Enviar</button>
+            </form>
+        </div>
+    </section>
+    <footer>
+        <div class="container">
+            <p>&copy;
